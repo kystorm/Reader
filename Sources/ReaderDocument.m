@@ -338,6 +338,8 @@
 	[encoder encodeObject:_fileSize forKey:@"FileSize"];
 
 	[encoder encodeObject:_lastOpen forKey:@"LastOpen"];
+    
+    [encoder encodeObject:_title forKey:@"Title"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)decoder
@@ -359,6 +361,8 @@
 		_fileSize = [decoder decodeObjectForKey:@"FileSize"];
 
 		_lastOpen = [decoder decodeObjectForKey:@"LastOpen"];
+        
+        _title = [decoder decodeObjectForKey:@"Title"];
 
 		if (_guid == nil) _guid = [ReaderDocument GUID];
 
